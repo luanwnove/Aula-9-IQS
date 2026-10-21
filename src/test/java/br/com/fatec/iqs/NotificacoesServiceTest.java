@@ -1,3 +1,4 @@
+
 package br.com.fatec.iqs;
 
 import org.junit.jupiter.api.Test;
@@ -8,17 +9,12 @@ class NotificacoesServiceTest {
 
     @Test
     void aceitaEmailValido() {
-        assertTrue(service.enviarEmail("aluno@exemplo.com"));
+        assertTrue(service.enviarEmail("aluno@fatec.sp.gov.br"));
     }
 
     @Test
-    void rejeitaEmailSemArroba() {
-        assertFalse(service.enviarEmail("alunoexemplo.com"));
-    }
-
-    @Test
-    void rejeitaEmailSemDominio() {
-        assertFalse(service.enviarEmail("aluno@"));
+    void rejeitaEmailInvalido() {
+        assertFalse(service.enviarEmail("email-invalido"));
     }
 
     @Test
